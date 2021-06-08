@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <%- include('./partialls/header.ejs') %>
+    </head>
+
+    <body>
+    <%- include('./partialls/navbar.ejs') %>
+    <div class="container" style="margin-top:6em">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-12 shadow-lg p-5 rounded">
+
+                <form action='/auth/register' method="POST">
+                    <h3>Register Form</h3>
+                    <hr>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">User name</label>
+                        <input type="text" class="form-control" id="username" placeholder="username" name="username">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+                    </div>
+                    <% if (registerErr) { %>
+                      <div class="alert alert-danger" role="alert">
+                        <%=registerErr%>
+                      </div>
+                    <% } %>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
